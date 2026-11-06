@@ -1,0 +1,4 @@
+site/data/notizie.json
+cache_social.json
+*.tmp
+__pycache__/

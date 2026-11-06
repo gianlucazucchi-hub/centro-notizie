@@ -1,0 +1,10 @@
+{
+  "fuso_orario": "Europe/Rome",
+  "ora_rassegna_mattino": "07:00",
+  "finestra_ore": 36,
+  "intervallo_minuti": 10,
+  "porta": 8000,
+  "storie_massime": 300,
+  "storie_in_rassegna": 30,
+  "social_storie_da_verificare": 15
+}

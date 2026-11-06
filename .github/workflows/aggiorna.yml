@@ -1,0 +1,57 @@
+name: Aggiorna notizie
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # ogni 15 minuti (GitHub può ritardare di qualche minuto)
+  workflow_dispatch: {}      # pulsante "Run workflow" per aggiornare a mano
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: aggiorna-notizie
+  cancel-in-progress: false
+
+jobs:
+  raccogli:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pubblica.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recupera la cache dei social
+        uses: actions/cache@v4
+        with:
+          path: cache_social.json
+          key: social-${{ github.run_id }}
+          restore-keys: social-
+
+      - name: Raccogli e ordina le notizie
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_TENDENZE: ${{ vars.X_TENDENZE }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python raccogli.py
+
+      - name: Salva la rassegna del mattino nell'archivio
+        run: |
+          git config user.name "centro-notizie-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/data/archivio
+          git diff --cached --quiet || (git commit -m "Rassegna del mattino $(date +%F)" && git push)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: pubblica
+        uses: actions/deploy-pages@v4

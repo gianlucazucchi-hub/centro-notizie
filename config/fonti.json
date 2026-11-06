@@ -1,0 +1,45 @@
+{
+  "_nota": "Elenco delle fonti RSS. peso = autorevolezza/impatto (0.5-2.0). tipo = agenzia | quotidiano | tg | indipendente | estero | aggregatore. Disattiva una fonte con \"attiva\": false. Se un indirizzo smette di funzionare lo vedi nel pannello 'Stato fonti' del sito.",
+  "fonti": [
+    {"id": "ansa",          "nome": "ANSA",                 "tipo": "agenzia",      "peso": 1.8, "url": "https://www.ansa.it/sito/ansait_rss.xml"},
+    {"id": "ansa-politica", "nome": "ANSA Politica",        "tipo": "agenzia",      "peso": 1.8, "url": "https://www.ansa.it/sito/notizie/politica/politica_rss.xml", "categoria": "politica"},
+    {"id": "ansa-mondo",    "nome": "ANSA Mondo",           "tipo": "agenzia",      "peso": 1.8, "url": "https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml", "categoria": "esteri"},
+    {"id": "ansa-cronaca",  "nome": "ANSA Cronaca",         "tipo": "agenzia",      "peso": 1.6, "url": "https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml", "categoria": "cronaca"},
+    {"id": "ansa-economia", "nome": "ANSA Economia",        "tipo": "agenzia",      "peso": 1.6, "url": "https://www.ansa.it/sito/notizie/economia/economia_rss.xml", "categoria": "economia"},
+    {"id": "agi",           "nome": "AGI",                  "tipo": "agenzia",      "peso": 1.6, "url": "https://www.agi.it/rss"},
+    {"id": "adnkronos",     "nome": "Adnkronos",            "tipo": "agenzia",      "peso": 1.5, "url": "https://www.adnkronos.com/rss"},
+
+    {"id": "corriere",      "nome": "Corriere della Sera",  "tipo": "quotidiano",   "peso": 1.7, "url": "https://xml2.corriereobjects.it/rss/homepage.xml"},
+    {"id": "repubblica",    "nome": "la Repubblica",        "tipo": "quotidiano",   "peso": 1.7, "url": "https://www.repubblica.it/rss/homepage/rss2.0.xml"},
+    {"id": "lastampa",      "nome": "La Stampa",            "tipo": "quotidiano",   "peso": 1.5, "url": "https://www.lastampa.it/rss"},
+    {"id": "sole24ore",     "nome": "Il Sole 24 Ore",       "tipo": "quotidiano",   "peso": 1.5, "url": "https://www.ilsole24ore.com/rss/italia.xml", "categoria": "economia"},
+    {"id": "ilgiornale",    "nome": "il Giornale",          "tipo": "quotidiano",   "peso": 1.2, "url": "https://www.ilgiornale.it/feed.xml"},
+    {"id": "ilfatto",       "nome": "Il Fatto Quotidiano",  "tipo": "quotidiano",   "peso": 1.3, "url": "https://www.ilfattoquotidiano.it/feed/"},
+    {"id": "avvenire",      "nome": "Avvenire",             "tipo": "quotidiano",   "peso": 1.1, "url": "https://www.avvenire.it/rss"},
+
+    {"id": "rainews",       "nome": "Rai News (TG Rai)",    "tipo": "tg",           "peso": 1.7, "url": "https://www.rainews.it/rss/tutti"},
+    {"id": "skytg24",       "nome": "Sky TG24",             "tipo": "tg",           "peso": 1.6, "url": "https://tg24.sky.it/rss/tg24.xml"},
+    {"id": "tgcom24",       "nome": "TGCom24",              "tipo": "tg",           "peso": 1.5, "url": "https://www.tgcom24.mediaset.it/rss/homepage.xml"},
+    {"id": "tgla7",         "nome": "TG La7",               "tipo": "tg",           "peso": 1.4, "url": "https://tg.la7.it/rss"},
+
+    {"id": "ilpost",        "nome": "Il Post",              "tipo": "indipendente", "peso": 1.4, "url": "https://www.ilpost.it/feed/"},
+    {"id": "fanpage",       "nome": "Fanpage",              "tipo": "indipendente", "peso": 1.3, "url": "https://www.fanpage.it/feed/"},
+    {"id": "open",          "nome": "Open",                 "tipo": "indipendente", "peso": 1.3, "url": "https://www.open.online/feed/"},
+    {"id": "today",         "nome": "Today.it",             "tipo": "indipendente", "peso": 1.1, "url": "https://www.today.it/rss"},
+    {"id": "internazionale","nome": "Internazionale",       "tipo": "indipendente", "peso": 1.2, "url": "https://www.internazionale.it/sitemaps/rss.xml"},
+    {"id": "linkiesta",     "nome": "Linkiesta",            "tipo": "indipendente", "peso": 1.0, "url": "https://www.linkiesta.it/feed/"},
+    {"id": "valigiablu",    "nome": "Valigia Blu",          "tipo": "indipendente", "peso": 1.0, "url": "https://www.valigiablu.it/feed/"},
+    {"id": "huffpost",      "nome": "HuffPost Italia",      "tipo": "indipendente", "peso": 1.1, "url": "https://www.huffingtonpost.it/feeds/index.xml"},
+
+    {"id": "gnews-it",      "nome": "Google Notizie Italia","tipo": "aggregatore",  "peso": 0.8, "url": "https://news.google.com/rss?hl=it&gl=IT&ceid=IT:it"},
+    {"id": "gnews-mondo",   "nome": "Google Notizie Mondo", "tipo": "aggregatore",  "peso": 0.8, "url": "https://news.google.com/rss/headlines/section/topic/WORLD?hl=it&gl=IT&ceid=IT:it", "categoria": "esteri"},
+
+    {"id": "bbc",           "nome": "BBC World",            "tipo": "estero",       "peso": 1.6, "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "categoria": "esteri"},
+    {"id": "guardian",      "nome": "The Guardian World",   "tipo": "estero",       "peso": 1.5, "url": "https://www.theguardian.com/world/rss", "categoria": "esteri"},
+    {"id": "aljazeera",     "nome": "Al Jazeera",           "tipo": "estero",       "peso": 1.4, "url": "https://www.aljazeera.com/xml/rss/all.xml", "categoria": "esteri"},
+    {"id": "nyt",           "nome": "New York Times World", "tipo": "estero",       "peso": 1.5, "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml", "categoria": "esteri"},
+    {"id": "dw",            "nome": "Deutsche Welle",       "tipo": "estero",       "peso": 1.3, "url": "https://rss.dw.com/rdf/rss-en-world", "categoria": "esteri"},
+    {"id": "france24",      "nome": "France 24",            "tipo": "estero",       "peso": 1.3, "url": "https://www.france24.com/en/rss", "categoria": "esteri"},
+    {"id": "euronews-it",   "nome": "Euronews Italiano",    "tipo": "estero",       "peso": 1.2, "url": "https://it.euronews.com/rss", "categoria": "esteri"}
+  ]
+}

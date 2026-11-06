@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro di controllo notizie</title>
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="barra">
+  <div class="marchio">
+    <span class="punto-live" aria-hidden="true"></span>
+    <h1>Centro di controllo notizie</h1>
+  </div>
+  <nav class="viste" role="tablist">
+    <button class="vista attiva" data-vista="diretta" role="tab">In diretta</button>
+    <button class="vista" data-vista="mattino" role="tab">Rassegna del mattino</button>
+  </nav>
+  <div class="stato">
+    <select id="giorno" hidden aria-label="Giorno della rassegna"></select>
+    <span id="aggiornato">Caricamento…</span>
+    <button id="btn-fonti" class="link">Stato fonti</button>
+  </div>
+</header>
+
+<div id="avviso-demo" class="avviso" hidden>Dati di prova: questi titoli non sono notizie reali. Avvia la raccolta vera per vedere le notizie del giorno.</div>
+
+<section class="filtri" aria-label="Filtri">
+  <div id="categorie" class="chip-riga"></div>
+  <div class="filtri-destra">
+    <input id="cerca" type="search" placeholder="Cerca (es. Meloni, Gaza, Borsa)" aria-label="Cerca">
+    <label class="interruttore"><input id="giro" type="checkbox" checked> Giro automatico</label>
+  </div>
+</section>
+
+<main class="griglia">
+  <section class="mappa-box">
+    <div id="mappa" aria-label="Mappa delle notizie"></div>
+    <div class="legenda" id="legenda"></div>
+  </section>
+  <aside class="lista-box">
+    <div class="lista-testa">
+      <h2 id="titolo-lista">Le più calde ora</h2>
+      <span id="conteggio"></span>
+    </div>
+    <div id="tendenze" class="tendenze" hidden></div>
+    <ol id="lista" class="lista"></ol>
+  </aside>
+</main>
+
+<dialog id="dlg-fonti">
+  <form method="dialog"><button class="chiudi" aria-label="Chiudi">×</button></form>
+  <h2>Stato delle fonti</h2>
+  <div id="social-stato"></div>
+  <table><thead><tr><th>Fonte</th><th>Tipo</th><th>Articoli</th><th>Stato</th></tr></thead><tbody id="tab-fonti"></tbody></table>
+</dialog>
+
+<script src="vendor/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
